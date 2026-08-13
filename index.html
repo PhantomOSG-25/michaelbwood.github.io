@@ -1,17 +1,738 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Michael Wood CS499 ePortfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Michael B. Wood's software engineering portfolio featuring Python, Java, SQL, Linux, testing, embedded systems, and artificial intelligence projects.">
+  <title>Michael B. Wood | Computer Science Portfolio</title>
+  <style>
+    :root {
+      --navy: #0b1f33;
+      --navy-soft: #132f4c;
+      --blue: #2f80ed;
+      --cyan: #68d5e8;
+      --ink: #172230;
+      --muted: #5b6878;
+      --surface: #ffffff;
+      --surface-alt: #f4f7fb;
+      --border: #dbe4ef;
+      --shadow: 0 18px 45px rgba(11, 31, 51, 0.10);
+      --radius: 18px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--surface);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #175db5;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(219, 228, 239, 0.9);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-size: 0.94rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .hero {
+      overflow: hidden;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(104, 213, 232, 0.24), transparent 28%),
+        radial-gradient(circle at 10% 85%, rgba(47, 128, 237, 0.28), transparent 32%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+    }
+
+    .hero-grid {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      align-items: center;
+      gap: 70px;
+      padding: 92px 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--cyan);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      line-height: 1.18;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-size: clamp(2.8rem, 7vw, 5.6rem);
+      letter-spacing: -0.055em;
+    }
+
+    .hero-copy {
+      max-width: 710px;
+      margin: 0;
+      color: #dce8f5;
+      font-size: clamp(1.08rem, 2.2vw, 1.28rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--navy);
+      background: var(--cyan);
+    }
+
+    .button-primary:hover {
+      color: var(--navy);
+      background: #94e7f3;
+    }
+
+    .button-secondary {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.38);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .button-secondary:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.13);
+    }
+
+    .status-card {
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+    }
+
+    .status-card h2 {
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 18px;
+      margin: 0;
+    }
+
+    .status-row {
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .status-row:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .status-row dt {
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status-row dd {
+      margin: 4px 0 0;
+      color: #ffffff;
+      font-weight: 650;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .section-alt {
+      background: var(--surface-alt);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: clamp(2rem, 4vw, 3.15rem);
+      letter-spacing: -0.035em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-copy p:first-child {
+      margin-top: 0;
+    }
+
+    .strengths {
+      display: grid;
+      gap: 14px;
+    }
+
+    .strength {
+      padding: 19px 20px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--surface);
+    }
+
+    .strength strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--navy);
+    }
+
+    .strength span {
+      color: var(--muted);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      min-height: 350px;
+      flex-direction: column;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .project-number {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      border-radius: 12px;
+      color: var(--navy);
+      background: #dff8fc;
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+      color: var(--navy);
+      font-size: 1.42rem;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 5px 10px;
+      border-radius: 999px;
+      color: #1e4f75;
+      background: #eaf4ff;
+      font-size: 0.8rem;
+      font-weight: 750;
+    }
+
+    .project-link {
+      margin-top: auto;
+      font-weight: 800;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .skill-group p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 30px;
+      padding: 32px;
+      border-left: 5px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .education-date {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .education-card h3 {
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 1.28rem;
+    }
+
+    .education-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .education-card + .education-card {
+      margin-top: 18px;
+    }
+
+    .contact-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      padding: 48px;
+      border-radius: 24px;
+      color: #ffffff;
+      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
+    }
+
+    .contact-panel h2 {
+      margin-bottom: 10px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+    }
+
+    .contact-panel p {
+      max-width: 650px;
+      margin: 0;
+      color: #dce8f5;
+    }
+
+    .site-footer {
+      padding: 30px 0;
+      color: var(--muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 44px;
+        padding: 72px 0;
+      }
+
+      .project-grid,
+      .skill-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        min-height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+      }
+
+      .hero-grid {
+        min-height: auto;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .education-card {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .contact-panel,
+      .project-card,
+      .status-card {
+        padding: 25px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button {
+        transition: none;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">Michael B. Wood</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<h1>Michael Wood</h1>
-<h2>Computer Science Capstone ePortfolio</h2>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Computer Science · Software Engineering · AI</p>
+          <h1 id="hero-title">Practical problem-solving, built into software.</h1>
+          <p class="hero-copy">
+            I am Michael B. Wood, a computer science student completing a software engineering concentration and transitioning from hands-on field operations into application support, software quality assurance, systems analysis, and development.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">View featured projects</a>
+            <a class="button button-secondary" href="https://github.com/PhantomOSG-25" target="_blank" rel="noreferrer">GitHub profile</a>
+          </div>
+        </div>
 
-<p>This site contains my CS499 capstone portfolio.</p>
+        <aside class="status-card" aria-label="Current career and education status">
+          <h2>Current Focus</h2>
+          <dl class="status-list">
+            <div class="status-row">
+              <dt>Bachelor's coursework</dt>
+              <dd>Completing August 2026</dd>
+            </div>
+            <div class="status-row">
+              <dt>Graduate direction</dt>
+              <dd>Planning M.S. study in Artificial Intelligence</dd>
+            </div>
+            <div class="status-row">
+              <dt>Target roles</dt>
+              <dd>Application Support · Software QA · Systems Analysis · Junior Development</dd>
+            </div>
+            <div class="status-row">
+              <dt>Location</dt>
+              <dd>Tennessee · Open to remote, hybrid, or on-site opportunities</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
 
-<p>Artifacts, enhancements, and documentation will be added throughout the course.</p>
+    <section id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <div class="section-heading">
+            <p class="eyebrow">About Me</p>
+            <h2 id="about-title">Technology backed by real-world experience.</h2>
+          </div>
+          <p>
+            Before pursuing computer science, I built decades of experience in field service, construction, logistics, equipment operation, customer service, and business ownership. Those roles taught me how to inspect a problem, find the real cause, explain the solution clearly, document the work, and remain accountable for the result.
+          </p>
+          <p>
+            I now apply the same approach to software. I enjoy debugging, testing, improving system reliability, organizing data, and translating technical behavior into language that users and teammates can understand.
+          </p>
+        </div>
 
+        <div class="strengths" aria-label="Transferable strengths">
+          <div class="strength">
+            <strong>Root-cause troubleshooting</strong>
+            <span>Move past symptoms, isolate the problem, and verify the correction.</span>
+          </div>
+          <div class="strength">
+            <strong>Customer communication</strong>
+            <span>Explain technical findings in practical language and set clear expectations.</span>
+          </div>
+          <div class="strength">
+            <strong>Ownership and documentation</strong>
+            <span>Track work carefully and follow a problem through to completion.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section-alt" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Featured Work</p>
+          <h2 id="projects-title">Projects that show how I think.</h2>
+          <p>These projects demonstrate software design, testing, database work, embedded systems, artificial intelligence, and structured troubleshooting.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">01</span>
+            <h3>Raspberry Pi Thermostat</h3>
+            <p>A Python and Linux thermostat that integrates a temperature sensor, GPIO controls, LEDs, an LCD, UART communication, and SQLite history.</p>
+            <ul class="tags" aria-label="Raspberry Pi thermostat technologies">
+              <li>Python</li>
+              <li>Linux</li>
+              <li>SQLite</li>
+              <li>Embedded Systems</li>
+            </ul>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/CS_499_ePortfolio" target="_blank" rel="noreferrer">Explore the capstone →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">02</span>
+            <h3>Deep Q-Learning Treasure Maze</h3>
+            <p>A reinforcement-learning agent that uses a neural network, experience replay, exploration, and a target network to learn an 8x8 maze.</p>
+            <ul class="tags" aria-label="Treasure maze technologies">
+              <li>Python</li>
+              <li>TensorFlow</li>
+              <li>Keras</li>
+              <li>Deep Q-Learning</li>
+            </ul>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-370-Current-Emerging-Trends" target="_blank" rel="noreferrer">Review the AI project →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">03</span>
+            <h3>Animal Rescue CRUD Module</h3>
+            <p>A reusable Python data-access module created to connect MongoDB records with a client-centered animal rescue dashboard.</p>
+            <ul class="tags" aria-label="Animal rescue project technologies">
+              <li>Python</li>
+              <li>MongoDB</li>
+              <li>PyMongo</li>
+              <li>CRUD</li>
+            </ul>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-340-Client-Server-Development" target="_blank" rel="noreferrer">View the client-server project →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">04</span>
+            <h3>Java Service Testing</h3>
+            <p>Requirement-based unit testing for contact, task, and appointment services, including normal behavior, boundary conditions, and invalid input.</p>
+            <ul class="tags" aria-label="Java testing project technologies">
+              <li>Java</li>
+              <li>JUnit</li>
+              <li>Unit Testing</li>
+              <li>Validation</li>
+            </ul>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-320-Software-Test-Automation" target="_blank" rel="noreferrer">Examine the testing project →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Technical Foundation</p>
+          <h2 id="skills-title">Skills developed through projects and coursework.</h2>
+        </div>
+
+        <div class="skill-grid">
+          <div class="skill-group">
+            <h3>Programming and Data</h3>
+            <p>Python, Java, SQL, MySQL, MongoDB, SQLite, and foundational JavaScript.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Systems and Tools</h3>
+            <p>Linux, Bash, Git, GitHub, Raspberry Pi, REST APIs, and client-server concepts.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Quality and Analysis</h3>
+            <p>Unit testing, validation, debugging, root-cause analysis, requirements, Agile, Scrum, and technical documentation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section-alt" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Education</p>
+          <h2 id="education-title">Building from software engineering into AI.</h2>
+        </div>
+
+        <div class="education-card">
+          <div class="education-date">August 2026</div>
+          <div>
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p>Software Engineering concentration · Southern New Hampshire University · Coursework completing August 2026.</p>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="education-date">Planned 2026</div>
+          <div>
+            <h3>Master's Study in Artificial Intelligence</h3>
+            <p>Planning to begin graduate study in September 2026, subject to final enrollment plans.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <h2 id="contact-title">Ready to bring practical troubleshooting into technology.</h2>
+            <p>I am interested in opportunities where reliability, communication, testing, customer support, and continuous learning matter.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://www.linkedin.com/in/michael-wood-752082361" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+            <a class="button button-secondary" href="https://github.com/PhantomOSG-25" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Michael B. Wood · Built as part of my computer science portfolio.</p>
+    </div>
+  </footer>
 </body>
 </html>
