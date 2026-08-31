@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Michael B. Wood's software engineering portfolio featuring Python, Java, SQL, Linux, testing, embedded systems, and artificial intelligence projects.">
+  <meta name="description" content="Michael B. Wood's computer science portfolio featuring application support, software QA, systems analysis, Java, Python, C++, databases, embedded systems, and artificial intelligence projects.">
   <title>Michael B. Wood | Computer Science Portfolio</title>
   <style>
     :root {
@@ -21,13 +21,8 @@
       --max-width: 1120px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -43,9 +38,7 @@
       text-underline-offset: 3px;
     }
 
-    a:hover {
-      color: #175db5;
-    }
+    a:hover { color: #175db5; }
 
     a:focus-visible {
       outline: 3px solid var(--cyan);
@@ -126,9 +119,7 @@
       text-transform: uppercase;
     }
 
-    h1,
-    h2,
-    h3 {
+    h1, h2, h3 {
       margin-top: 0;
       line-height: 1.18;
     }
@@ -167,9 +158,7 @@
       transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
     }
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
+    .button:hover { transform: translateY(-2px); }
 
     .button-primary {
       color: var(--navy);
@@ -236,16 +225,11 @@
       font-weight: 650;
     }
 
-    section {
-      padding: 92px 0;
-    }
-
-    .section-alt {
-      background: var(--surface-alt);
-    }
+    section { padding: 92px 0; }
+    .section-alt { background: var(--surface-alt); }
 
     .section-heading {
-      max-width: 720px;
+      max-width: 760px;
       margin-bottom: 44px;
     }
 
@@ -269,9 +253,7 @@
       align-items: start;
     }
 
-    .about-copy p:first-child {
-      margin-top: 0;
-    }
+    .about-copy p:first-child { margin-top: 0; }
 
     .strengths {
       display: grid;
@@ -291,9 +273,7 @@
       color: var(--navy);
     }
 
-    .strength span {
-      color: var(--muted);
-    }
+    .strength span { color: var(--muted); }
 
     .project-grid {
       display: grid;
@@ -362,7 +342,7 @@
 
     .skill-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
@@ -411,9 +391,7 @@
       color: var(--muted);
     }
 
-    .education-card + .education-card {
-      margin-top: 18px;
-    }
+    .education-card + .education-card { margin-top: 18px; }
 
     .contact-panel {
       display: flex;
@@ -445,30 +423,13 @@
       background: var(--surface);
     }
 
-    .site-footer p {
-      margin: 0;
-    }
+    .site-footer p { margin: 0; }
 
     @media (max-width: 850px) {
-      .hero-grid,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        gap: 44px;
-        padding: 72px 0;
-      }
-
-      .project-grid,
-      .skill-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-panel {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 44px; padding: 72px 0; }
+      .project-grid, .skill-grid { grid-template-columns: 1fr; }
+      .contact-panel { align-items: flex-start; flex-direction: column; }
     }
 
     @media (max-width: 620px) {
@@ -485,34 +446,15 @@
         overflow-x: auto;
       }
 
-      .hero-grid {
-        min-height: auto;
-      }
-
-      section {
-        padding: 70px 0;
-      }
-
-      .education-card {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .contact-panel,
-      .project-card,
-      .status-card {
-        padding: 25px;
-      }
+      .hero-grid { min-height: auto; }
+      section { padding: 70px 0; }
+      .education-card { grid-template-columns: 1fr; gap: 10px; }
+      .contact-panel, .project-card, .status-card { padding: 25px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .button {
-        transition: none;
-      }
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
     }
   </style>
 </head>
@@ -533,10 +475,10 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Computer Science · Software Engineering · AI</p>
-          <h1 id="hero-title">Practical problem-solving, built into software.</h1>
+          <p class="eyebrow">Application Support · Software QA · Systems Analysis · Development</p>
+          <h1 id="hero-title">Practical troubleshooting, translated into software.</h1>
           <p class="hero-copy">
-            I am Michael B. Wood, an early-career software professional with completed degree requirements in computer science and a software engineering concentration. I am transitioning from hands-on field operations into application support, software quality assurance, systems analysis, and development.
+            I am Michael B. Wood, an early-career technology professional with completed B.S. degree requirements in computer science and a software engineering concentration. I am transitioning from hands-on field operations into application support, software quality assurance, systems analysis, and select junior development roles.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#projects">View featured projects</a>
@@ -560,8 +502,8 @@
               <dd>Application Support · Software QA · Systems Analysis · Junior Development</dd>
             </div>
             <div class="status-row">
-              <dt>Location</dt>
-              <dd>Tennessee · Open to remote, hybrid, or on-site opportunities</dd>
+              <dt>Work format</dt>
+              <dd>Open to remote, hybrid, or on-site opportunities</dd>
             </div>
           </dl>
         </aside>
@@ -573,28 +515,28 @@
         <div class="about-copy">
           <div class="section-heading">
             <p class="eyebrow">About Me</p>
-            <h2 id="about-title">Technology backed by real-world experience.</h2>
+            <h2 id="about-title">Software thinking shaped by real-world operations.</h2>
           </div>
           <p>
-            Before pursuing computer science, I built decades of experience in field service, construction, logistics, equipment operation, customer service, and business ownership. Those roles taught me how to inspect a problem, find the real cause, explain the solution clearly, document the work, and remain accountable for the result.
+            Before pursuing computer science, I built experience in field service, construction, logistics, equipment operation, customer service, and business ownership. Those roles taught me to diagnose problems under real constraints, communicate clearly, document the work, and remain accountable for the result.
           </p>
           <p>
-            I now apply the same approach to software. I enjoy debugging, testing, improving system reliability, organizing data, and translating technical behavior into language that users and teammates can understand.
+            I now apply that same approach to software: understand the actual problem, troubleshoot systematically, test assumptions, improve reliability, organize information, and verify that the solution works for the people who depend on it.
           </p>
         </div>
 
         <div class="strengths" aria-label="Transferable strengths">
           <div class="strength">
             <strong>Root-cause troubleshooting</strong>
-            <span>Move past symptoms, isolate the problem, and verify the correction.</span>
+            <span>Move past symptoms, isolate the real failure point, and verify the correction.</span>
           </div>
           <div class="strength">
-            <strong>Customer communication</strong>
-            <span>Explain technical findings in practical language and set clear expectations.</span>
+            <strong>Clear technical communication</strong>
+            <span>Translate findings into practical language for users, teammates, and stakeholders.</span>
           </div>
           <div class="strength">
             <strong>Ownership and documentation</strong>
-            <span>Track work carefully and follow a problem through to completion.</span>
+            <span>Track work carefully, preserve context, and follow problems through to completion.</span>
           </div>
         </div>
       </div>
@@ -604,100 +546,79 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Featured Work</p>
-          <h2 id="projects-title">Projects that show how I think.</h2>
-          <p>These projects demonstrate software design, testing, security, systems analysis, database work, embedded systems, artificial intelligence, and structured troubleshooting.</p>
+          <h2 id="projects-title">Projects aligned to the roles I am pursuing.</h2>
+          <p>These maintained portfolio projects demonstrate application behavior, automated testing, databases, systems analysis, embedded software, algorithms, and artificial intelligence.</p>
         </div>
 
         <div class="project-grid">
           <article class="project-card">
             <span class="project-number">01</span>
-            <h3>Raspberry Pi Thermostat</h3>
-            <p>A Python and Linux thermostat that integrates a temperature sensor, GPIO controls, LEDs, an LCD, UART communication, and SQLite history.</p>
-            <ul class="tags" aria-label="Raspberry Pi thermostat technologies">
-              <li>Python</li>
-              <li>Linux</li>
-              <li>SQLite</li>
-              <li>Embedded Systems</li>
+            <h3>GameAuth Platform Service</h3>
+            <p>A Java service with REST endpoints, authentication and authorization, health checks, predictable error behavior, automated testing, and operational support documentation.</p>
+            <ul class="tags" aria-label="GameAuth technologies">
+              <li>Java</li><li>Dropwizard</li><li>Maven</li><li>REST</li>
             </ul>
-            <a class="project-link" href="https://github.com/PhantomOSG-25/raspberry-pi-thermostat" target="_blank" rel="noreferrer">Explore the capstone →</a>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-230-Operating-Platforms" target="_blank" rel="noreferrer">Review the service →</a>
           </article>
 
           <article class="project-card">
             <span class="project-number">02</span>
-            <h3>Deep Q-Learning Treasure Maze</h3>
-            <p>A reinforcement-learning agent that uses a neural network, experience replay, exploration, and a target network to learn an 8x8 maze.</p>
-            <ul class="tags" aria-label="Treasure maze technologies">
-              <li>Python</li>
-              <li>TensorFlow</li>
-              <li>Keras</li>
-              <li>Deep Q-Learning</li>
-            </ul>
-            <a class="project-link" href="https://github.com/PhantomOSG-25/deep-q-learning-treasure-maze" target="_blank" rel="noreferrer">Review the AI project →</a>
-          </article>
-
-          <article class="project-card">
-            <span class="project-number">03</span>
-            <h3>Animal Rescue CRUD Module</h3>
-            <p>A reusable Python data-access module created to connect MongoDB records with a client-centered animal rescue dashboard.</p>
-            <ul class="tags" aria-label="Animal rescue project technologies">
-              <li>Python</li>
-              <li>MongoDB</li>
-              <li>PyMongo</li>
-              <li>CRUD</li>
-            </ul>
-            <a class="project-link" href="https://github.com/PhantomOSG-25/animal-rescue-dashboard" target="_blank" rel="noreferrer">View the client-server project →</a>
-          </article>
-
-          <article class="project-card">
-            <span class="project-number">04</span>
-            <h3>Java Test Automation</h3>
-            <p>Requirement-based unit testing for contact, task, and appointment services, including normal behavior, boundary conditions, and invalid input.</p>
-            <ul class="tags" aria-label="Java testing project technologies">
-              <li>Java</li>
-              <li>JUnit</li>
-              <li>Unit Testing</li>
-              <li>Validation</li>
+            <h3>Java Service Validation and Testing</h3>
+            <p>A focused QA project that translates requirements into deterministic Java behavior, boundary tests, defect corrections, traceability, coverage gates, and CI verification.</p>
+            <ul class="tags" aria-label="Java testing technologies">
+              <li>Java</li><li>JUnit 5</li><li>JaCoCo</li><li>CI</li>
             </ul>
             <a class="project-link" href="https://github.com/PhantomOSG-25/CS-320-Software-Test-Automation" target="_blank" rel="noreferrer">Examine the testing project →</a>
           </article>
 
           <article class="project-card">
-            <span class="project-number">05</span>
-            <h3>Secure Coding Lab</h3>
-            <p>A focused C++ lab demonstrating checked arithmetic, bounded input handling, injection awareness, threat modeling, and automated verification.</p>
-            <ul class="tags" aria-label="Secure coding project technologies">
-              <li>C++</li>
-              <li>CMake</li>
-              <li>Security</li>
-              <li>CI</li>
+            <span class="project-number">03</span>
+            <h3>Animal Rescue Operations Dashboard</h3>
+            <p>A maintained Python, MongoDB, and Dash application with validated CRUD operations, business rules, a database-free synthetic demo, automated tests, and engineering documentation.</p>
+            <ul class="tags" aria-label="Animal rescue technologies">
+              <li>Python</li><li>MongoDB</li><li>PyMongo</li><li>Dash</li>
             </ul>
-            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-405-Secure-Coding" target="_blank" rel="noreferrer">Review the secure-coding lab →</a>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/animal-rescue-dashboard" target="_blank" rel="noreferrer">View the dashboard →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">04</span>
+            <h3>Raspberry Pi Thermostat System</h3>
+            <p>A Python and Linux thermostat integrating a temperature sensor, GPIO controls, LEDs, LCD output, serial communication, state-machine logic, and SQLite operating history.</p>
+            <ul class="tags" aria-label="Thermostat technologies">
+              <li>Python</li><li>Linux</li><li>SQLite</li><li>Raspberry Pi</li>
+            </ul>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/raspberry-pi-thermostat" target="_blank" rel="noreferrer">Explore the capstone →</a>
+          </article>
+
+          <article class="project-card">
+            <span class="project-number">05</span>
+            <h3>C++ Course Planner</h3>
+            <p>A portable C++20 application using a binary search tree, validated course data, safe ownership, CMake builds, and automated tests on a reconstructed portfolio version.</p>
+            <ul class="tags" aria-label="Course planner technologies">
+              <li>C++20</li><li>CMake</li><li>BST</li><li>RAII</li>
+            </ul>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-300-Course-Planner" target="_blank" rel="noreferrer">Review the C++ project →</a>
           </article>
 
           <article class="project-card">
             <span class="project-number">06</span>
-            <h3>DriverPass Systems Analysis</h3>
-            <p>A requirements and architecture case study with traceability, security considerations, corrected diagrams, and client-ready documentation.</p>
-            <ul class="tags" aria-label="Systems analysis project technologies">
-              <li>Requirements</li>
-              <li>Architecture</li>
-              <li>Traceability</li>
-              <li>Security</li>
+            <h3>DriverPass System Analysis and Design</h3>
+            <p>A systems-analysis case study translating stakeholder needs into requirements, traceability, UML models, security considerations, acceptance criteria, and client-facing documentation.</p>
+            <ul class="tags" aria-label="DriverPass disciplines">
+              <li>Requirements</li><li>UML</li><li>Traceability</li><li>Systems Design</li>
             </ul>
             <a class="project-link" href="https://github.com/PhantomOSG-25/CS-255-System-Analysis-and-Design" target="_blank" rel="noreferrer">Explore the systems case study →</a>
           </article>
 
           <article class="project-card">
             <span class="project-number">07</span>
-            <h3>Full-Stack Portfolio Application</h3>
-            <p>A full-stack application portfolio demonstrating client-server architecture, data flow, maintainable organization, and review-ready delivery.</p>
-            <ul class="tags" aria-label="Full-stack project technologies">
-              <li>JavaScript</li>
-              <li>APIs</li>
-              <li>Web</li>
-              <li>Architecture</li>
+            <h3>Deep Q-Learning Treasure Maze</h3>
+            <p>A reinforcement-learning project using neural networks, exploration and exploitation, experience replay, target-network updates, testing, and documented model evaluation.</p>
+            <ul class="tags" aria-label="Treasure maze technologies">
+              <li>Python</li><li>TensorFlow</li><li>Keras</li><li>Deep Q-Learning</li>
             </ul>
-            <a class="project-link" href="https://github.com/PhantomOSG-25/CS-465-Full-Stack-Development" target="_blank" rel="noreferrer">View the full-stack project →</a>
+            <a class="project-link" href="https://github.com/PhantomOSG-25/deep-q-learning-treasure-maze" target="_blank" rel="noreferrer">Review the AI project →</a>
           </article>
         </div>
       </div>
@@ -707,21 +628,25 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Technical Foundation</p>
-          <h2 id="skills-title">Skills developed through projects and coursework.</h2>
+          <h2 id="skills-title">Skills backed by reviewable project evidence.</h2>
         </div>
 
         <div class="skill-grid">
           <div class="skill-group">
             <h3>Programming and Data</h3>
-            <p>Python, Java, SQL, MySQL, MongoDB, SQLite, and foundational JavaScript.</p>
+            <p>Python, Java, C++, SQL, MySQL, MongoDB, SQLite, and foundational JavaScript.</p>
           </div>
           <div class="skill-group">
-            <h3>Systems and Tools</h3>
-            <p>Linux, Bash, Git, GitHub, Raspberry Pi, REST APIs, and client-server concepts.</p>
+            <h3>Development and Systems</h3>
+            <p>Linux, Bash, Git, GitHub, Maven, CMake, Raspberry Pi, REST APIs, and client-server architecture.</p>
           </div>
           <div class="skill-group">
-            <h3>Quality and Analysis</h3>
-            <p>Unit testing, validation, debugging, root-cause analysis, requirements, Agile, Scrum, and technical documentation.</p>
+            <h3>Quality and Testing</h3>
+            <p>JUnit 5, pytest, unit testing, validation, boundary testing, debugging, root-cause analysis, coverage, and CI workflows.</p>
+          </div>
+          <div class="skill-group">
+            <h3>Analysis and Delivery</h3>
+            <p>Requirements analysis, UML, systems design, Agile, Scrum, technical documentation, and stakeholder communication.</p>
           </div>
         </div>
       </div>
@@ -731,14 +656,14 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Education</p>
-          <h2 id="education-title">Building from software engineering into AI.</h2>
+          <h2 id="education-title">Software engineering foundation with an AI direction.</h2>
         </div>
 
         <div class="education-card">
-          <div class="education-date">August 2026</div>
+          <div class="education-date">2026</div>
           <div>
             <h3>Bachelor of Science in Computer Science</h3>
-            <p>Software Engineering concentration · Southern New Hampshire University · Degree requirements completed; anticipated conferral September 1, 2026.</p>
+            <p>Software Engineering concentration · Southern New Hampshire University · Degree requirements completed; anticipated conferral September 1, 2026 · Final GPA: 3.03.</p>
           </div>
         </div>
 
@@ -757,7 +682,7 @@
         <div class="contact-panel">
           <div>
             <h2 id="contact-title">Ready to bring practical troubleshooting into technology.</h2>
-            <p>I am interested in opportunities where reliability, communication, testing, customer support, and continuous learning matter.</p>
+            <p>I am seeking application support, software QA, systems analysis, and select junior development opportunities where reliability, communication, testing, and continuous learning matter.</p>
           </div>
           <div class="hero-actions">
             <a class="button button-primary" href="https://www.linkedin.com/in/michael-wood-752082361" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
@@ -770,7 +695,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 Michael B. Wood · Built as part of my computer science portfolio.</p>
+      <p>© 2026 Michael B. Wood · Computer science and software engineering portfolio.</p>
     </div>
   </footer>
 </body>
